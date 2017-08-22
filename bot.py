@@ -5,6 +5,13 @@ import time
 
 bot = telebot.TeleBot(config.token)
 
+about_string = 'Этот бот попытается помочь вам подготовиться к сдаче IELTS.'
+
+@bot.message_handler(commands=['about'])
+def send_about(message):
+    bot.send_message(message.chat.id, about_string)
+
+
 @bot.message_handler(commands=['saymyname'])
 def send_user_first_name(message):
     bot.send_message(message.chat.id, 'Hi, ' + message.chat.first_name + '!')
