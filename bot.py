@@ -11,13 +11,9 @@ about_string = 'Этот бот попытается помочь вам под�
 def send_about(message):
     bot.send_message(message.chat.id, about_string)
 
-
 @bot.message_handler(commands=['saymyname'])
 def send_user_first_name(message):
     bot.send_message(message.chat.id, 'Hi, ' + message.chat.first_name + '!')
-
-# @bot.message_handler(commands=['about'])
-# def 
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_msg(message):
